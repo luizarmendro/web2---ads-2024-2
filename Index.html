@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefa 1 Web 2</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(219, 239, 255);
+            font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+            /* Alterado para usar a fonte Roboto */
+        }
+
+        .card {
+            position: absolute;
+            top: 50%;
+            /* centralizar o formulário */
+            left: 50%;
+            /* centralizar o formulário */
+            transform: translate(-50%, -50%);
+            /* centralizar o formulário */
+            width: 100%;
+            max-width: 400px;
+            /*cefine uma largura máxima para o card */
+        }
+
+        label {
+            font-weight: 700;
+            /* deixa o texto do rótulo em negrito */
+            margin-bottom: 5px;
+            /* espaço abaixo do rótulo */
+            display: block;
+            /*para colocar as labels uma embaixo da outrea*/
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            /* ajusta a largura dos inputs */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            background-color: rgb(219, 239, 255);
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+            background-color: rgb(78, 134, 180);
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            /* ajusta o tamanho da fonte do botão */
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .cardMenu /*estilo da barra de naveg*/{
+            background-color: rgb(78, 134, 180);
+        }
+
+        .menu /*estilo da barra de naveg*/{
+            list-style-type: none;
+            display: flex;
+        }
+
+        .menu li /*estilo da lista de itens*/{
+            position: relative;
+        }
+
+        .menu a /*estilo de cada link*/{
+            display: block;
+            padding: 14px 20px;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .dropdown-content /*mantem o drop escondido*/{
+            display: none;
+            position: absolute;
+            background-color: rgb(78, 134, 180);
+            min-width: 160px;
+        }
+
+        .dropdown:hover .dropdown-content /*ao passar o cursor do mouse por cima, o drop é acionado*/{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="cardMenu">
+        <ul class="menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Clientes</a></li>
+            <li class="dropdown"><a href="#" class="btnDrop">Serviços</a>
+                <div class="dropdown-content">
+                    <a href="#">Desenvolvimento de Sites</a>
+                    <a href="#">Criação de Newsletters</a>
+                    <a href="#">Otimização de SEO</a>
+                    <a href="#">Design Gráfico</a>
+                </div>
+            </li>
+            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="#">Contatos</a></li>
+        </ul>
+    </nav>
+
+    <div class="card">
+        <form action="">
+            <h1>
+                Formulário Web 2
+            </h1>
+
+            <label for="nome">Nome:</label>
+            <input type="text" name="campoNome" id="nome" class="inserir" placeholder="Luiz Felipe Armendro" required>
+
+            <label for="dataNasc">Data de Nascimento:</label>
+            <input type="date" name="campoDataNasc" id="dataNasc" class="inserir" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" name="campoEmail" id="email" class="inserir" placeholder="luizarmendro@gmail.com"
+                required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="campoTelefone" placeholder="(65) 99806-9972" required>
+
+            <input type="submit" value="Cadastrar" name="enviar">
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#telefone').mask('(00) 00000-0000');
+        });
+    </script>
+</body>
+
+</html>
